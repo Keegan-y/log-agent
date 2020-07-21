@@ -1,0 +1,21 @@
+syntax = "proto3"; // 版本声明，使用Protocol Buffers v3版本
+
+package pb; // 包名
+
+
+// 定义一个获取app信息的服务   blockheight BlockHeight
+service Appinfo {
+  // BlockHeight 方法
+  rpc BlockHeight (BlockHeightRequest) returns (BlockHeightReply) {}
+
+}
+
+// 包含块高的一个请求消息
+message BlockHeightRequest {
+  string name = 1;
+}
+
+// 包含块高的响应消息
+message BlockHeightReply {
+  string message = 1;
+}
